@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap')
+
+// text
+$very-dark-desaturated-blue: hsl(238, 29%, 16%)
+$soft-red: hsl(14, 88%, 65%)
+
+// background gradient:
+
+$soft-violet: hsl(273, 75%, 66%)
+$soft-blue: hsl(240, 73%, 65%)
+
+// Neutral
+// Text
+$very-dark-grayish-blue: hsl(237, 12%, 33%)
+$dark-grayish-blue: hsl(240, 6%, 50%)
+
+// Dividers
+
+$light-grayish-blue: hsl(240, 5%, 91%)
+
+// Typography
+
+$font-size: 12px
+$interlineado: 1.5rem
+$font-family: 'Kumbh Sans', sans-serif  //400 , 700
+
+.flag
+    position: absolute
+    top: 0
+    margin-top: 5px
+    border-top-right-radius: 1rem
+    border-bottom-right-radius: 1rem
+    background: #2e2e2e
+    width: 120px
+    height: 50px
+    transition: all 1s
+    display: flex
+    justify-content: center
+    align-items: center
+    color: #fff
+    font-family: sans-serif
+    text-transform: uppercase
+    font-weight: 700
+    font-size: 16px
+    &:hover
+        width: 400px
+        color: transparent
+        .attribution
+            width: 400px
+            opacity: 1
+
+.attribution
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    transition: all 1s
+    width: 0
+    font-size: 16px
+    text-align: center
+    opacity: 0
+    white-space: nowrap
+    overflow: hidden
+    font-family: sans-serif
+    color: #fff
+    text-decoration: none
+    a
+        color: #fff
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    font-family: $font-family
+
+html
+    font-size: $font-size
+
+body
+    background: linear-gradient($soft-violet, $soft-blue)
+
+.faqcon
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 100vh
+    overflow: hidden
+.faq
+    display: grid
+    grid-template-columns: 1fr 1fr
+    border-radius: 1rem
+    padding: 2rem
+    background: #fff
+
+.image
+    position: relative
+    &__shadow
+        position: absolute
+        top: 50%
+        left: -25%
+        transform: translate(-50%, -50%)
+    &__box
+        position: absolute
+        top: 40%
+        right: 80%
+        z-index: 3
+
+    &__woman
+        position: absolute
+        top: 50%
+        left: 40%
+        transform: translate(-50%, -50%)
+.mobile
+    display: none  
+
+.desktop
+    display: block
+
+.details
+    z-index: 200
+    margin: 3rem
+    &__title
+        font-size: 2rem
+    &__questioncon
+        cursor: pointer
+        display: flex
+        align-items: center
+        justify-content: space-between
+        border-radius: 1rem
+        margin-top: 1rem
+        padding: 0.4rem
+        &:hover
+            color: $soft-red
+            background: #f7f7f7
+    &__question
+        margin-top: $interlineado
+        font-size: 1.1rem
+        margin: 0.5rem
+        display: block
+
+    &__arrow
+        align-self: center
+        transform: rotate(0deg)
+        transition: transform 1s
+        &--active
+            transform: rotate(90deg)
+    &__answer
+        height: 0rem
+        max-width: 25rem
+        color: $dark-grayish-blue
+        opacity: 0
+        transition: all 1s
+        margin-left: 1rem
+        margin-right: 1rem
+    &__line
+        color: $light-grayish-blue
+        margin-top: $interlineado
+
+.details--active
+    & .details
+        &__answer
+            margin-top: 0.5rem
+            opacity: 1
+
+@media screen and (max-width: 924px)
+    .faqcon
+        margin: 8rem 0
+        overflow: visible
+    .faq  
+        grid-template-columns: 1fr
+        
+    .mobile
+        display: block
+    .desktop
+        display: none
+    .image
+        position: relative
+        width: 100%
+        height: 10rem
+        &__shadow
+            top: 50%
+            left: 50%
+            width: 80%
+        &__woman
+            width: 80%
+            top: 0
+            left: 50%
+    .details
+        padding: 1rem
+        margin: 0
+        &__title
+            text-align: center
+        &__question
+            font-size: 1rem
+
